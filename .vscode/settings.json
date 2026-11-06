@@ -1,7 +1,7 @@
 {
   "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
   "python.terminal.activateEnvironment": true,
-  // Notebooks load data with relative paths ("data/orders.csv"), so the
-  // kernel CWD must stay the notebook's own folder, not the repo root.
-  "jupyter.notebookFileRoot": "${fileDirname}"
+  // Notebooks live in notebooks/ but load data via repo-relative paths
+  // ("data/orders.csv"), so pin the kernel CWD to the repo root.
+  "jupyter.notebookFileRoot": "${workspaceFolder}"
 }
