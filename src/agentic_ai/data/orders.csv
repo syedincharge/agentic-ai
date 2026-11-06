@@ -1,0 +1,7 @@
+order_id,customer_id,restaurant,items,status,total_amount,created_hours_ago,promised_minutes,delivery_minutes
+ORD-1001,101,Biryani Blues,Chicken Biryani x1; Raita x1,DELIVERED,480.00,30,45,85
+ORD-1002,101,Pizza Point,Margherita Pizza x1; Garlic Bread x1,DELIVERED,560.00,100,40,38
+ORD-1003,101,Burger Barn,Veg Burger x2; Fries x1,OUT_FOR_DELIVERY,350.00,1,40,
+ORD-2001,102,Dosa Darbar,Masala Dosa x2; Filter Coffee x2,DELIVERED,300.00,52,35,60
+ORD-2002,102,Noodle Nest,Hakka Noodles x1,PREPARING,220.00,0,35,
+ORD-3001,103,Sweet Tooth,Gulab Jamun Box x1,DELIVERED,260.00,200,30,29

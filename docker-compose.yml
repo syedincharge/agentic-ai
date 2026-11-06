@@ -1,0 +1,22 @@
+# Infra for the Zomato support agent: Postgres (source of truth: data, chat, checkpoints, memory) and Qdrant (semantic search).
+name: zomato-agent
+services:
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: zomato
+      POSTGRES_PASSWORD: zomato
+      POSTGRES_DB: zomato
+    ports: ["5432:5432"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U zomato"]
+      interval: 3s
+      retries: 20
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports: ["6333:6333"]
+    volumes: [qdrant:/qdrant/storage]
+volumes:
+  pgdata:
+  qdrant:
