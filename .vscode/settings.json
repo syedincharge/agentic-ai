@@ -1,7 +1,7 @@
 {
   "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
   "python.terminal.activateEnvironment": true,
-  // Notebooks live in notebooks/ but load data via repo-relative paths
-  // ("data/orders.csv"), so pin the kernel CWD to the repo root.
-  "jupyter.notebookFileRoot": "${workspaceFolder}"
+  // Notebooks sit in src/agentic_ai/ next to data/, and load it as
+  // "data/orders.csv", so the kernel CWD must be the notebook's own folder.
+  "jupyter.notebookFileRoot": "${fileDirname}"
 }
