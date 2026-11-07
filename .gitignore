@@ -16,3 +16,6 @@ wheels/
 
 # macOS
 .DS_Store
+
+# Pre-edit notebook backups
+*.preclaude

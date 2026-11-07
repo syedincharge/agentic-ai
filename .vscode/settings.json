@@ -3,5 +3,9 @@
   "python.terminal.activateEnvironment": true,
   // Notebooks sit in src/agentic_ai/ next to data/, and load it as
   // "data/orders.csv", so the kernel CWD must be the notebook's own folder.
-  "jupyter.notebookFileRoot": "${fileDirname}"
+  "jupyter.notebookFileRoot": "${fileDirname}",
+  // Red Hat Dependency Analytics hints "rhtpa trusted-libraries" upsells on
+  // pyproject.toml deps, recommending Red Hat's credentialed package mirror.
+  // Not vulnerabilities, and we install from PyPI via uv.
+  "redHatDependencyAnalytics.recommendations.enabled": false
 }
