@@ -1,10 +1,10 @@
-CREATE TABLE customers (
+CREATE TABLE IF NOT EXISTS customers (
     customer_id BIGINT PRIMARY KEY,
     name        TEXT NOT NULL,
     email       TEXT NOT NULL
 );
 
-CREATE TABLE orders (
+CREATE TABLE IF NOT EXISTS orders (
     order_id     TEXT PRIMARY KEY,
     customer_id  BIGINT NOT NULL REFERENCES customers (customer_id),
     restaurant   TEXT NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE orders (
     delivered_at TIMESTAMPTZ
 );
 
-CREATE TABLE refund_requests (
+CREATE TABLE IF NOT EXISTS refund_requests (
     id              BIGSERIAL PRIMARY KEY,
     order_id        TEXT NOT NULL REFERENCES orders (order_id),
     customer_id     BIGINT NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE refund_requests (
     created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
-CREATE TABLE customer_preferences (
+CREATE TABLE IF NOT EXISTS customer_preferences (
     customer_id      BIGINT NOT NULL,
     preference_key   TEXT NOT NULL,
     preference_value TEXT NOT NULL,
@@ -38,7 +38,7 @@ CREATE TABLE customer_preferences (
     PRIMARY KEY (customer_id, preference_key)
 );
 
-CREATE TABLE conversation_threads (
+CREATE TABLE IF NOT EXISTS conversation_threads (
     thread_id   TEXT PRIMARY KEY,
     customer_id BIGINT NOT NULL,
     created_at  TIMESTAMPTZ NOT NULL DEFAULT NOW()
